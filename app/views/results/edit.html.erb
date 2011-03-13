@@ -11,6 +11,20 @@
 	:cache => "livepipe_cache" %>
 
 <%= javascript_include_tag "controls.js" %>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+<%= javascript_include_tag "mathjax/mathjax.js?config=TeX-AMS-MML_HTMLorMML"%>
+
+
+
 <%= javascript_include_tag "DropDownMenu/DropDownMenu.js"%>
 <%= javascript_include_tag "ResizePane/ResizePane.js"%>
 
@@ -87,6 +101,7 @@ function check_working() {
 //]]>
 </script>
 
+
 <%
 # Javascript for test result window
 %>
@@ -118,6 +133,8 @@ function check_working() {
 
 <%= render :partial => 'results/common/errors' %>
 
+<math display="block"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math> 
+
 <div id="file_selector">
 	<%= render :partial => 'results/common/file_selector', :locals => {:files => @files, :can_download => true} %>
 	<% if @assignment.enable_test %>
@@ -145,3 +162,5 @@ function check_working() {
 
 <% end %>
 </div>
+
+<math display="block"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math>

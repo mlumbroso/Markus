@@ -1,9 +1,13 @@
 <% annots.each do |annot| %>
+
   <li class="<%= cycle('annotations1', 'annotations2') %>">
 
     <p class="lineNumber">#<%= annot.annotation_number %> - <%= render :partial => annot.annotation_list_link_partial, :locals => {:annot => annot} %></p>
     <div class="annotationContent" id="annotation_text_content_display_<%=h(annot.annotation_text.id)%>">
-      <%=simple_format(h(annot.annotation_text.content))%>
+
+<%tags = %w(math mrow mi mo mfrac msqrt msup mn)%>
+<%=sanitize(annot.annotation_text.content, :tags => tags, :attributes => %w(display)) %>
+	
     </div>
     <p class="manageAnnotations"><%=link_to_function I18n.t("edit"), "$('annotation_text_content_edit_#{annot.annotation_text.id}').show();$('annotation_text_content_display_#{annot.annotation_text.id}').hide();"%>
     &middot;
@@ -22,6 +26,9 @@
         <%= submit_tag I18n.t("marker.annotation.submit_edit") , :confirm => I18n.t("marker.annotation.change_across_submissions") %>
           <input type="reset" value="<%= I18n.t("cancel") %>" onclick="$('annotation_text_content_edit_<%=h(annot.annotation_text.id)%>').hide();$('annotation_text_content_display_<%=h(annot.annotation_text.id)%>').show();"></input>
         </p>
+	
+
+
 
       <% end %>
 
@@ -29,3 +36,5 @@
 
   </li>
 <% end %>
+
+<div><math display="block"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math></div>
