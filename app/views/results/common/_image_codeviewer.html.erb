@@ -20,7 +20,7 @@
     <% if (defined? annots) %>
       <% annots.each do |annot| %>
           add_annotation_text(<%=annot.annotation_text.id%>,
-          '<%=sanitize(annot.annotation_text.content.to_s, :tags => tags, :attributes => %w(display)) %>');
+          '<%=sanitize(annot.annotation_text.content.to_s, :tags => tags, :attributes => %w(display color)) %>');
       <% end %>
     <% end %>
   //]]>

@@ -6,7 +6,7 @@
     <div class="annotationContent" id="annotation_text_content_display_<%=h(annot.annotation_text.id)%>">
 
 <%tags = %w(math mrow mi mo mfrac msqrt msup mn div)%>
-<%=sanitize(annot.annotation_text.content, :tags => tags, :attributes => %w(display)) %>
+<%=sanitize(annot.annotation_text.content, :tags => tags, :attributes => %w(display color)) %>
 	
     </div>
     <p class="manageAnnotations"><%=link_to_function I18n.t("edit"), "$('annotation_text_content_edit_#{annot.annotation_text.id}').show();$('annotation_text_content_display_#{annot.annotation_text.id}').hide();"%>
