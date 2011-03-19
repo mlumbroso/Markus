@@ -15,10 +15,12 @@
   <script type="text/javascript">
   //<![CDATA[
     source_code_ready_for_image();
+	<%tags = %w(math mrow mi mo mfrac msqrt msup mn div)%>
+	
     <% if (defined? annots) %>
       <% annots.each do |annot| %>
           add_annotation_text(<%=annot.annotation_text.id%>,
-          '<%=simple_format(h(escape_javascript(annot.annotation_text.content.to_s)))%>');
+          '<%=sanitize(annot.annotation_text.content.to_s, :tags => tags, :attributes => %w(display)) %>');
       <% end %>
     <% end %>
   //]]>

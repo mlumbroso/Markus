@@ -71,3 +71,8 @@ var DropDownMenu = Class.create({
     return null;
   }
 });
+
+function respondToClick() {
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]); 
+}

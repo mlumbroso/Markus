@@ -5,7 +5,7 @@
     <p class="lineNumber">#<%= annot.annotation_number %> - <%= render :partial => annot.annotation_list_link_partial, :locals => {:annot => annot} %></p>
     <div class="annotationContent" id="annotation_text_content_display_<%=h(annot.annotation_text.id)%>">
 
-<%tags = %w(math mrow mi mo mfrac msqrt msup mn)%>
+<%tags = %w(math mrow mi mo mfrac msqrt msup mn div)%>
 <%=sanitize(annot.annotation_text.content, :tags => tags, :attributes => %w(display)) %>
 	
     </div>
@@ -36,5 +36,3 @@
 
   </li>
 <% end %>
-
-<div><math display="block"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math></div>

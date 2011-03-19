@@ -1,8 +1,8 @@
 <div id="pane_holders">
   <div id="code_pane">
     <ul id="code_and_annotations_tabs" class="subsection_tabs">
-       <li class="tab"><a href="#code_holder"><%= I18n.t("marker.source_code") %></a></li>
-       <li class="tab"><a href="#annotations_summary"><%= I18n.t("marker.annot_summary") %></a></li>
+       <li class="tab" onclick="respondToClick()"><a href="#code_holder"><%= I18n.t("marker.source_code") %></a></li>
+       <li class="tab" onclick="respondToClick()"><a href="#annotations_summary"><%= I18n.t("marker.annot_summary") %></a></li>
        <% if can_show_remark_request_tab_in_marker_pane(submission) %>
           <li class="tab"><a href="#remark_request_tab"><%= I18n.t("marker.remark_request") %></a></li>
        <% end %>
@@ -17,6 +17,7 @@
       <div class="clear"></div>
       <div id="codeviewer">
 
+
       </div> <!-- codeviewer --> 
       
     </div> <!-- End of Code holder -->
@@ -30,7 +31,8 @@
        
       <h3><%= I18n.t("marker.current_annotations") %></h3>
       <p><%= I18n.t("marker.across_all_submission_files") %></p>
-    
+
+
       <ul id="annotation_summary_list">
       </ul>
       

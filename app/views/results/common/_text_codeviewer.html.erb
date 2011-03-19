@@ -19,8 +19,9 @@
 
     <% if (defined? annots) %>
         <% annots.each do |annot| %>
+	<%tags = %w(math mrow mi mo mfrac msqrt msup mn div)%>
             add_annotation_text(<%=annot.annotation_text.id%>,
-            '<%=simple_format(h(escape_javascript(annot.annotation_text.content.to_s)))%>');
+            '<%=sanitize(annot.annotation_text.content.to_s, :tags => tags, :attributes => %w(display)) %>');
             add_annotation(<%=annot.id%>, $R(<%= annot.line_start %>, <%= annot.line_end %>),
              '<%=annot.annotation_text.id%>');
 
