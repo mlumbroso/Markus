@@ -65,7 +65,7 @@ var AnnotationTextDisplayer = Class.create({
   //Show the displayer and MathJax it
   show: function() {
     $(this.display_node).show();
-    respondToClick();
+    respondToClick();   //Prise en charge de MathJax
   },
   //Returns whether or not the Displayer is showing
   getShowing: function() {
