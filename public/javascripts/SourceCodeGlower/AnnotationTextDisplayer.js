@@ -21,6 +21,7 @@ var AnnotationTextDisplayer = Class.create({
     this.display_node = new Element('div', {'class': 'annotation_text_display', 'onmousemove': 'hide_image_annotations()'});
     $(parent_node).appendChild(this.display_node);
     this.hide();
+	
   },
   //Assumes collection is subclass of Prototype Enumerable class
   //x and y is the location on the screen where this collection will display
@@ -43,6 +44,7 @@ var AnnotationTextDisplayer = Class.create({
     
     //Show the Displayer
     this.show();
+	respondToClick(); 
   },
   //Hide all showing annotations.
   hideShowing: function() {
@@ -57,6 +59,7 @@ var AnnotationTextDisplayer = Class.create({
       left: (x + TEXT_DISPLAY_X_OFFSET) + 'px',
       top: (y + TEXT_DISPLAY_Y_OFFSET) + 'px'
     });
+	respondToClick(); 
   },
   //Hide the displayer
   hide: function() {
@@ -64,6 +67,7 @@ var AnnotationTextDisplayer = Class.create({
   },
   //Show the displayer and MathJax it
   show: function() {
+	respondToClick();
     $(this.display_node).show();
     respondToClick();   //Prise en charge de MathJax
   },
