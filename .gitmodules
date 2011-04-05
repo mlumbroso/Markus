@@ -1,0 +1,3 @@
+[submodule "MathJax"]
+	path = MathJax
+	url = https://github.com/sdiehl/jquery-mathml.git
