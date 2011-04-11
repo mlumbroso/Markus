@@ -72,6 +72,6 @@ var DropDownMenu = Class.create({
   }
 });
 
-function respondToClick() { // fonction de rechargement du DOM par MathJax
+function respondToClick() { // function that reloads the DOM for MathJax (http://www.mathjax.org/docs/1.1/typeset.html)
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]); 
 }

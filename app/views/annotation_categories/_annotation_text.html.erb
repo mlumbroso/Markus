@@ -1,10 +1,7 @@
 <li id="annotation_text_<%=annotation_text.id%>">
 <div id="annotation_text_<%=annotation_text.id%>_control">
-  <p>
-	
-    <%tags = %w(math mrow mi mo mfrac msqrt msup mn div)%>
-    <%=sanitize(annot.annotation_text.content, :tags => tags, :attributes => %w(display)) %>
-
+  <p>	
+    <%= allow_mathml(@annot.annotation_text.content) %>
   <%= link_to_function t(:edit), "$('annotation_text_#{annotation_text.id}_control').hide();$('annotation_text_#{annotation_text.id}_edit').show();" %>
   <%= link_to_remote t(:delete), :url => {:action => 'delete_annotation_text', :id => annotation_text.id}, :confirm => t('annotations.delete.annotation_text') %>
 </div>
